@@ -27,16 +27,16 @@ import {
 import MenuIcon from '@material-ui/icons/Menu';
 import CancelIcon from '@material-ui/icons/Cancel';
 import SearchIcon from '@material-ui/icons/Search';
-// import Typography from "@mui/material/Typography";
 import useStyles from '../utils/styles'
 
-export default function Layout({ title, children }) {
+export default function Layout({ title, description, children }) {
   const classes = useStyles();
 
   return (
     <div>
       <Head>
         <title>{title ? `${title} - Next Amazona` : "Next Amazona"}</title>
+        {description && <meta name="description" content={description} />}
       </Head>
       <AppBar position="static" className={classes.navbar}>
         <Toolbar>
