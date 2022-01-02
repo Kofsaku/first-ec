@@ -1,7 +1,33 @@
 import React from 'react';
 import Head from 'next/head';
 import NextLink from 'next/link';
-import { AppBar, Toolbar, Typography, Container, Link } from  '@mui/material'
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Container,
+  Link,
+  createMuiTheme,
+  ThemeProvider,
+  CssBaseline,
+  Switch,
+  Badge,
+  Button,
+  Menu,
+  MenuItem,
+  Box,
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+  Divider,
+  ListItemText,
+  InputBase,
+} from '@material-ui/core';
+import MenuIcon from '@material-ui/icons/Menu';
+import CancelIcon from '@material-ui/icons/Cancel';
+import SearchIcon from '@material-ui/icons/Search';
+// import Typography from "@mui/material/Typography";
 import useStyles from '../utils/styles'
 
 export default function Layout({ title, children }) {
@@ -34,7 +60,7 @@ export default function Layout({ title, children }) {
       </AppBar>
       <Container className={classes.main}>{children}</Container>
       <footer className={classes.footer}>
-        <Typography>All rights reserved. Next Amazona.</Typography>
+        <Typography className={classes.typography}>All rights reserved. Next Amazona.</Typography>
       </footer>
     </div>
   );

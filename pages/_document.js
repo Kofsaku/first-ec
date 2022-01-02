@@ -1,20 +1,24 @@
-import Document, {Head, Html, Main, NextScript} from 'next/document'
-import { ServerStyleSheets } from '@mui/styles'
-import React from 'react'
+import { ServerStyleSheets } from '@mui/styles/'
+import Document, { Head, Html, Main, NextScript } from 'next/document';
+import React from 'react';
 
 export default class MyDocument extends Document {
-  render(){
+  render() {
     return (
       <Html lang="en">
-        <Head></Head>
+        <Head>
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+          />
+        </Head>
         <body>
-          <Main/>
-          <NextScript/>
+          <Main />
+          <NextScript />
         </body>
       </Html>
-    )
+    );
   }
-
 }
 
 MyDocument.getInitialProps = async (ctx) => {

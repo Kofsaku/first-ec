@@ -1,4 +1,5 @@
-import { CardActionArea, CardActions, CardContent, CardMedia, dividerClasses, Typography, Button, Grid, Card } from '@mui/material'
+import { Grid, Link, Card, CardMedia, CardContent, CardActions, CardActionArea, Typography, Button } from '@material-ui/core';
+
 import Layout from '../components/Layout'
 import data from '../utils/data';
 import NextLink from 'next/link';
