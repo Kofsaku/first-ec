@@ -58,6 +58,7 @@ export default function Layout({ title, description, children }) {
       body: {
         fontWeight: 'normal',
       }
+
     },
     palette: {
       type: darkMode? 'dark' : 'light',
@@ -73,7 +74,7 @@ export default function Layout({ title, description, children }) {
   return (
     <div>
       <Head>
-        <title>{title ? `${title} - Next Amazona` : "Next Amazona"}</title>
+        <title>{title ? `${title} - With My Girl` : "Todo's with Misaki"}</title>
         {description && <meta name="description" content={description} />}
       </Head>
       <ThemeProvider theme={theme}>
@@ -82,15 +83,12 @@ export default function Layout({ title, description, children }) {
           <Toolbar>
             <NextLink href="/" passHref>
               <Link>
-                <Typography className={classes.brand}>amazona</Typography>
+                <Typography className={classes.brand}>What to do with Misaki</Typography>
               </Link>
             </NextLink>
             <div className={classes.grow}> </div>
             <div>
               <Switch checked={darkMode} onChange={darkModeChangeHandler}></Switch>
-              <NextLink href="/cart" passHref>
-                <Link>Cart</Link>
-              </NextLink>
               <NextLink href="/login" passHref>
                 <Link>Login</Link>
               </NextLink>
@@ -99,7 +97,7 @@ export default function Layout({ title, description, children }) {
         </AppBar>
         <Container className={classes.main}>{children}</Container>
         <footer className={classes.footer}>
-          <Typography className={classes.typography}>All rights reserved. Next Amazona.</Typography>
+          <Typography >All rights reserved. Kosaku Tsubata.</Typography>
         </footer>
       </ThemeProvider>
     </div>
