@@ -30,6 +30,7 @@ import CancelIcon from '@material-ui/icons/Cancel';
 import SearchIcon from '@material-ui/icons/Search';
 import useStyles from '../utils/styles'
 import {Store} from '../utils/Store';
+import Cookies from 'js-cookie';
 
 export default function Layout({ title, description, children }) {
   const classes = useStyles();
@@ -38,6 +39,9 @@ export default function Layout({ title, description, children }) {
   const {darkMode} = state;
   const darkModeChangeHandler = () => {
     dispatch({type: darkMode? 'DARK_MODE_OFF': 'DARK_MODE_ON'});
+    const newDarkMode = !darkMode;
+    Cookies.set('darkMode', newDarkMode ? 'true': 'false');
+    // localStorage.setItem('darkMode', newDarkMode ? 'true': 'false');
   }
   const theme = createTheme({
     typography: {
