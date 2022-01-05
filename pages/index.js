@@ -3,14 +3,17 @@ import { Grid, Link, Card, CardMedia, CardContent, CardActions, CardActionArea, 
 import Layout from '../components/Layout'
 import data from '../utils/data';
 import NextLink from 'next/link';
+import db from '../utils/db';
+import Product from '../models/Product';
 
-export default function Home() {
+export default function Home(props) {
+  const {products} = props;
   return (
     <Layout>
       <div>
-        <h1>製品一覧</h1>
+        <h1>やりたいこと一覧</h1>
         <Grid container spacing={3}>
-          {data.products.map((product) => (
+          {products.map((product) => (
             <Grid item md={4} key={product.name}>
               <Card>
                 <NextLink href={`/product/${product.slug}`} passHref>
@@ -28,10 +31,6 @@ export default function Home() {
                   </CardContent>
                 </CardActionArea>
                 </NextLink>
-                <CardActions>
-                  <Typography>${product.price}</Typography>
-                  <Button size="small" color="primary">Add to Cart</Button>
-                </CardActions>
               </Card>
             </Grid>
             ))}
@@ -40,4 +39,15 @@ export default function Home() {
     </Layout>
 
   )
+}
+
+export async function getServerSideProps() {
+  await db.connect();
+  const products = await Product.find({}).lean();
+  await db.disconnect();
+  return {
+    props: {
+      products: products.map(db.convertDocToObj)
+    },
+  }
 }

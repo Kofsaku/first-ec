@@ -19,12 +19,26 @@ const useStyles = makeStyles({
     minHeight: '80vh',
   },
   footer: {
-    marginTop: 10,
+    marginTop: 20,
+    marginBottom: 20,
     textAlign: 'center',
+
   },
   section: {
     marginTop: 10,
     marginBottom: 10,
+  },
+  bigCard: {
+    height: 510,
+    borderRadius: 10
+  },
+  image: {
+    borderRadius: 10
+  },
+  form: {
+    maxWidth: 800,
+    margin: '0 auto',
   }
+
 });
 export default useStyles;
