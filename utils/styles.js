@@ -35,6 +35,10 @@ const useStyles = makeStyles({
   image: {
     borderRadius: 10
   },
+  form: {
+    maxWidth: 800,
+    margin: '0 auto',
+  }
 
 });
 export default useStyles;
