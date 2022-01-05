@@ -1,4 +1,3 @@
-import bcrypt from 'bcryptjs/dist/bcrypt';
 import nc from 'next-connect';
 import User from '../../../models/User';
 import db from '../../../utils/db';
