@@ -30,7 +30,8 @@ const useStyles = makeStyles({
   },
   bigCard: {
     height: 510,
-    borderRadius: 10
+    borderRadius: 10,
+    minWidth: 350,
   },
   image: {
     borderRadius: 10
