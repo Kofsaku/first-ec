@@ -19,6 +19,7 @@ import Layout from '../../components/Layout'
 import useStyles from '../../utils/styles'
 import Product from '../../models/Product'
 import db from '../../utils/db'
+import Router from 'next/router'
 
 export default function ProductScreen(props) {
   const { product } = props
@@ -30,10 +31,8 @@ export default function ProductScreen(props) {
 
   return <Layout title={product.name} description={product.description}>
     <div className={classes.section}>
-      <NextLink href="/" passHref>
-        <Link href="/">
-          <Typography component="h2" variant='h2'>一覧に戻る</Typography></Link>
-      </NextLink>
+      <Typography component="h2" variant='h2' onClick={() => Router.back()} className={classes.point}>一覧に戻る</Typography>
+
     </div>
     <Grid container spacing={1}>
       <Grid item md={5} sp={12}>
@@ -66,7 +65,7 @@ export default function ProductScreen(props) {
               <Grid container>
                 <Grid item xs={6}>
                   <Typography>
-                    ブランド
+                    時期
                   </Typography>
                 </Grid>
                 <Grid item xs={6}>
