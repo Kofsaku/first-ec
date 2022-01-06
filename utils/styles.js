@@ -38,6 +38,12 @@ const useStyles = makeStyles({
   form: {
     maxWidth: 800,
     margin: '0 auto',
+  },
+  point: {
+    cursor: 'pointer',
+    '&:hover': {
+      color: "#E9C93A",
+    },
   }
 
 });
